@@ -15,7 +15,13 @@ class GatewayRoutes {
             route {
                 path("/hello") // 👈 client requests this
                 filters { setPath("/guides") }
-                uri("https://spring.io/") // 👈 the downstream service that our service will access..
+                uri("https://spring.io/") // 👈 the downstream service that our service will access.
+            }
+
+            route {
+                path("/twitter/**")
+                filters { rewritePath("/twitter/(?<handle>.*)", "/\${handle}") }
+                uri("http://twitter.com/@")
             }
         }
 }
