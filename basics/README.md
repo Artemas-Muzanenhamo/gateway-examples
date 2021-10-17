@@ -1,6 +1,6 @@
 # Basics
 
-This application will simply route public requests calling the `/hello` endpoint to 
+This application is a gateway in distributed systems which simply routes requests calling the `/hello` endpoint to 
 the `spring.io` website. And the same will be the case for requests calling the 
 `/twitter/@**` endpoint to the `twitter.com` website.
 
